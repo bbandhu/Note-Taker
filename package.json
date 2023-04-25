@@ -20,7 +20,8 @@
   "homepage": "https://github.com/bbandhu/Note-Taker#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "node": "14.15.1"
   },
   "devDependencies": {}
 }
