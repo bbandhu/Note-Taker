@@ -36,6 +36,10 @@
   ##Tests
 
   N/A
-
+  
+  #Screenshots
+  ![image](https://github.com/bbandhu/Note-Taker/blob/main/Assets/Screenshot%201.png)
+  
+  ![image](https://github.com/bbandhu/Note-Taker/blob/main/Assets/Screenshot%202.png)
 
 
