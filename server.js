@@ -73,6 +73,32 @@ app.post("/api/notes", (req, res) => {
     res.status(400).json({ error: "title and text are required" });
   }
 });
+app.delete("/api/notes/:id", (req, res) => {
+
+    // Read the db.json file
+    fs.readFile("./db/db.json", "utf8", (err, notes) => {
+      if (err) {
+        return res.status(500).json({ err });
+      }
+      let data = JSON.parse(notes);
+
+      // Filter out the note with the given id
+      data = data.filter(note => note.id!== req.params.id);
+
+      // Write the new array to the db.json file
+      fs.writeFile("./db/db.json", JSON.stringify(data, null, 2), (err) => {
+        if (err) {
+          return res.status(500).json({ err });
+        }
+
+        // Send newly added data to the front-end
+        res.json(data);
+      });
+    });
+})
+
+
+
 // index.html for all other routes
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/index.html"));
